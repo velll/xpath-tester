@@ -24,5 +24,9 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "start":"webpack serve --config webpack.dev.js",
+    "build":"NODE_ENV=production webpack build --config webpack.production.js"
   }
 }

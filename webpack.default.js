@@ -4,7 +4,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
-  mode: 'development',
   module: {
     rules: [
       {
@@ -23,7 +22,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public/bundle')
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new CopyPlugin({
@@ -33,19 +32,5 @@ module.exports = {
         { from: 'src/index.html', to: '.'}
       ],
     }),
-  ],
-  devtool: 'source-map',
-  devServer: {
-    proxy: {
-      "/": { "target": "http://localhost:8081/" },
-      "/api": {
-          "target": "http://localhost:8081/",
-          "pathRewrite": {
-                  "^/api" : ""
-          },
-          "changeOrigin": true
-      }
-    }
-  }
-
+  ]
 };
