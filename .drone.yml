@@ -31,6 +31,6 @@ steps:
       from_secret: xpath_ssh_key
   when:
     branch:
-    - master
+    - main
     status:
     - success
