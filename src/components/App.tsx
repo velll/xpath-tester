@@ -2,7 +2,7 @@ import * as React from "react";
 import Inputs from "./Inputs";
 import Results from "./Results";
 
-import { select } from '../xpath';
+import { select } from 'xml-wrappers';
 
 class App extends React.Component<Props, State>  {
   constructor(props: Props) {
