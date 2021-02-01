@@ -28,6 +28,7 @@
   },
   "scripts": {
     "start":"webpack serve --config webpack.dev.js",
-    "build":"NODE_ENV=production webpack build --config webpack.production.js"
+    "build":"NODE_ENV=production webpack build --config webpack.production.js",
+    "jest-debug":"node --inspect-brk node_modules/.bin/jest --runInBand"
   }
 }

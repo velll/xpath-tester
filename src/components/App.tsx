@@ -2,7 +2,8 @@ import * as React from "react";
 import Inputs from "./Inputs";
 import Results from "./Results";
 
-import { select } from 'xml-wrappers';
+import { searchNewExpression, searchNewXML } from '../search';
+
 
 class App extends React.Component<Props, State>  {
   constructor(props: Props) {
@@ -19,29 +20,11 @@ class App extends React.Component<Props, State>  {
   }
 
   changeExpression(newExpression: string){
-    this.setState(state => ({
-      source: state.source,
-      expression: newExpression,
-      xmldoc: state.xmldoc,
-      result: this.search(state.xmldoc, newExpression)
-    }));
+    this.setState(state => searchNewExpression(state, newExpression));
   }
 
   changeXML(newXML: string){
-    this.setState(state => {
-      const xmldoc = new DOMParser().parseFromString(newXML, "text/xml");
-
-      return {
-        source: newXML,
-        expression: state.expression,
-        xmldoc: xmldoc,
-        result: this.search(xmldoc, state.expression)
-      };
-    });
-  }
-
-  search(xmldoc: Document, expression: string) {
-    return select(xmldoc, expression);
+    this.setState(state => searchNewXML(state, newXML));
   }
 
   public render() {
@@ -71,4 +54,4 @@ interface State {
   result: Node[]
 }
 
-export { App };
+export { App, State };

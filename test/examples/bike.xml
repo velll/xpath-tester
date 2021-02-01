@@ -1,0 +1,32 @@
+<Bike>
+  <Manufacturer>Specialized</Manufacturer>
+  <Style>Road</Style>
+  <Derailleurs>
+    <Derailleur position="front">
+      <Gears>3</Gears>
+      <Manufacturer>Shimano</Manufacturer>
+    </Derailleur>
+    <Derailleur position="rear">
+      <Gears>8</Gears>
+      <Manufacturer>Shimano</Manufacturer>
+    </Derailleur>
+  </Derailleurs>
+  <Brakes>
+    <Front>Disc</Front>
+    <Rear>V</Rear>
+  </Brakes>
+  <Wheels>
+    <Tires>
+      <Tire>
+        <Color>Black and white</Color>
+        <Rim>Double</Rim>
+        <Size>28</Size>
+      </Tire>
+      <Tire>
+        <Color>Black</Color>
+        <Rim>Double</Rim>
+        <Size>28</Size>
+      </Tire>
+    </Tires>
+  </Wheels>
+</Bike>
